@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Enter SQL</h1>
+<form method="post" >
+    {% csrf_token %}
+    <textarea name='userInputSQL'></textarea>
+    <input type="submit" value="Enter SQL into DB" >
+</form>
+<form method="post" >
+    {% csrf_token %}
+    <textarea name='readTable'></textarea>
+    <input type="submit" value="Enter Table Name you wanna see" >
+</form>
+    
+
+<!-- 
+- Find the average hard disk size of PCs
+- Find the average speed of laptop for each maker
+- Find the price of laptop, which is the only laptop model of the maker
+- Find the model and price of the printer of the highest price of each maker 
+-->
+<form  method="post"> {% csrf_token %}
+<input type="submit" name="q1" value="Find the average hard disk size of PCs">
+<input type="submit" name="q2" value="Find the average speed of laptop for each maker">
+<input type="submit" name="q3" value="Find the price of laptop, which is the only laptop model of the maker">
+<input type="submit" name="q4" value="Find the model and price of the printer of the highest price of each maker">
+</form>
+<h2>Read Table</h2>
+    {% for i in result1%}
+    <li>{{i}}</li>
+    {%endfor%}
+<h2>Result of button pushed</h2>
+    {% for i in result2 %}
+    <li>{{i}}</li>
+    {% endfor %}
+</body>
+</html>
